@@ -28,9 +28,12 @@ foreach ($personalInfos as $index => $value){
 問題3
 
 $ageList = [25, 30, 18];
-foreach ($ageList as $key => &$value) {
-    $personalInfos[$key]['age'] = $value;
+
+foreach ($ageList as $index => $value){
+    $personalInfos[$index]['age'] = $value;
 }
+echo var_dump($personalInfos);
+
 
 // Q3 オブジェクト-1
 
@@ -63,8 +66,7 @@ $tanaka -> attend('数学');
 // Q5 定義済みクラス
 
 $date = new DateTime('2024-12-02');
-$date -> modify('-1 Year');
-echo $date -> format('Y-m-d');
+echo $date -> modify('-1 Year') -> format('Y-m-d');
 
 date_default_timezone_set('Asia/Tokyo');
 $today = new DateTime('now');
